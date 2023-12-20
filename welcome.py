@@ -12,7 +12,7 @@ class WelcomeScreen(QMainWindow):
         super(WelcomeScreen, self).__init__()
         loadUi("Welcome.ui", self)
         self.widget = widget
-
+### I AM JUST TESTING FOR THIS APPLICATION##
         ### CONNECTING THE LOGIN BUTTON THAT LEADS TO THE LOGIN SCREEN ###
         self.Login_pushButton.clicked.connect(self.gotologinScreen)
 
