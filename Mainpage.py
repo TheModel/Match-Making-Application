@@ -56,6 +56,12 @@ class MainScreen(QMainWindow):
         # Connect save button to save event function
         self.Event_save_button.clicked.connect(self.saveEvent)
 
+        # Connect the save_preferences button to save preference function
+        self.Save_preferences_button.clicked.connect(self.save_preferences)
+
+        # Connect to the find_match button to find match
+        self.Find_match_button_2.clicked.connect(self.find_match)
+
         
 
     ###########################################################################################
@@ -331,3 +337,52 @@ class MainScreen(QMainWindow):
         self.loadEvent()
         
         
+    ###########################################################################################
+    ##    METHOD THAT AUTOMATICALLY THAT SAVES USER PREFERENCES                              ##
+    ###########################################################################################
+        
+    def save_preferences(self):
+        try:
+            # Gather user preferences from UI elements
+            username = self.username
+            complexion = self.Complexion_combo_box.currentText()
+            personality = self.Personality_combo_box.currentText()
+            min_age = self.Min_age_combo_box.currentText()
+            max_age = self.Max_age_combo_box.currentText()
+            gender = self.Gender_line_Edit.text()
+
+            # Save user preferences into the userpreference.db database
+            conn = sqlite3.connect("userpreference.db")
+            cursor = conn.cursor()
+
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS UserPreferences (
+                    Username TEXT PRIMARY KEY,
+                    Complexion TEXT,
+                    Personality TEXT,
+                    MinAge TEXT,
+                    MaxAge TEXT,
+                    Gender TEXT
+                )
+            ''')
+
+            cursor.execute('''
+                INSERT OR REPLACE INTO UserPreferences (Username, Complexion, Personality, MinAge, MaxAge, Gender)
+                VALUES (?, ?, ?, ?, ?, ?)
+            ''', (username, complexion, personality, min_age, max_age, gender))
+
+            conn.commit()
+            conn.close()
+            
+            QMessageBox.information(self, "Success", "Preferences saved successfully!")
+
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to save preferences: {str(e)}")
+
+    ###########################################################################################
+    ##    METHOD THAT AUTOMATICALLY THAT FINDS MATCH                                         ##
+    ###########################################################################################
+            
+    def find_match(self):
+        pass
+
