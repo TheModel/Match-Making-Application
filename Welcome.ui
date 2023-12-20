@@ -97,8 +97,8 @@ QPushButton:hover{
    <widget class="QPushButton" name="CreateAccount_pushButton">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>650</y>
+      <x>380</x>
+      <y>640</y>
       <width>451</width>
       <height>91</height>
      </rect>
