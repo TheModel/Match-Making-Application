@@ -48,7 +48,9 @@ class LoginScreen(QMainWindow):
                 self.login_error_label.setText("Password is required!")
             return False
         return True
-    
+
+    #You know I am just trying some github stuff So I will remove it after
+    # YEHHHHHHHHHHHHHHHHHHHHHHHHHHHhhhhhh   
 
     #####################################################################################
     ##                  LOGIN FUNCTION THAT LEADS TO THE MAINPAGE                      ##
