@@ -26,6 +26,7 @@ class WelcomeScreen(QMainWindow):
         loginscreen = LoginScreen(self.widget)
         self.widget.addWidget(loginscreen)
         self.widget.setCurrentIndex(self.widget.currentIndex() + 1)
+        
 
     
     #######################################################################
