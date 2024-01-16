@@ -10,3 +10,4 @@ elif number < 0:
 else:
     print("This number is 0")
     
+# C'est viux
