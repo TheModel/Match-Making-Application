@@ -40,7 +40,7 @@ font: 75 60pt &quot;Segoe Print&quot;;</string>
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>20</y>
+      <y>10</y>
       <width>411</width>
       <height>291</height>
      </rect>
@@ -52,7 +52,7 @@ font: 75 60pt &quot;Segoe Print&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="myimqges.qrc">:/Myimages/OIG.jpeg</pixmap>
+     <pixmap>:/Myimages/OIG.jpeg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
